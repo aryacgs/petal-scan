@@ -9,148 +9,83 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --blush:#fff1f6;
-    --blush-2:#ffe4ee;
-    --card:#ffffff;
-    --pink-soft:#ffd4e6;
-    --pink:#ff5c9e;
-    --pink-deep:#ff3d87;
-    --plum:#5a2a44;
-    --plum-mute:#a06987;
-    --mint:#25c39a;
-    --mint-bg:#e4f8f1;
-    --coral:#ff6b6b;
-    --coral-bg:#ffe9e9;
-    --amber:#f2a33c;
-    --amber-bg:#fff2df;
-    --lav:#cdb8ff;
+    --blush:#fff1f6;--blush-2:#ffe4ee;--card:#ffffff;--pink-soft:#ffd4e6;
+    --pink:#ff5c9e;--pink-deep:#ff3d87;--plum:#5a2a44;--plum-mute:#a06987;
+    --mint:#25c39a;--mint-bg:#e4f8f1;--coral:#ff6b6b;--coral-bg:#ffe9e9;
+    --amber:#f2a33c;--amber-bg:#fff2df;--lav:#9a7de0;--lav-bg:#efe9ff;
     --shadow:0 18px 40px -20px rgba(255,61,135,.45);
-    --disp:"Quicksand",system-ui,sans-serif;
-    --body:"Nunito",system-ui,sans-serif;
+    --disp:"Quicksand",system-ui,sans-serif;--body:"Nunito",system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
-    font-family:var(--body);
-    color:var(--plum);
-    background:
-      radial-gradient(circle at 12% 8%,var(--blush-2),transparent 42%),
-      radial-gradient(circle at 88% 4%,#f0e6ff,transparent 40%),
-      var(--blush);
-    min-height:100vh;
-    padding:34px 18px 70px;
+    font-family:var(--body);color:var(--plum);
+    background:radial-gradient(circle at 12% 8%,var(--blush-2),transparent 42%),radial-gradient(circle at 88% 4%,#f0e6ff,transparent 40%),var(--blush);
+    min-height:100vh;padding:34px 18px 70px;
   }
   .wrap{max-width:760px;margin:0 auto}
-
-  /* hero */
   .brand{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:22px}
-  .brand .logo{
-    width:38px;height:38px;border-radius:50%;
-    background:linear-gradient(135deg,var(--pink),var(--pink-deep));
-    display:grid;place-items:center;box-shadow:var(--shadow);
-  }
+  .brand .logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-deep));display:grid;place-items:center;box-shadow:var(--shadow)}
   .brand .logo svg{width:20px;height:20px}
-  .brand .name{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:.01em}
+  .brand .name{font-family:var(--disp);font-weight:700;font-size:20px}
   .brand .name span{color:var(--pink)}
 
   .hero{text-align:center;margin-bottom:26px}
   .hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5.4vw,38px);line-height:1.12;letter-spacing:-.01em}
   .hero h1 .accent{color:var(--pink)}
-  .hero p{color:var(--plum-mute);margin-top:12px;font-size:15px;max-width:46ch;margin-inline:auto;font-weight:600}
+  .hero p{color:var(--plum-mute);margin-top:12px;font-size:15px;max-width:48ch;margin-inline:auto;font-weight:600}
 
-  /* search */
-  .search{
-    background:var(--card);border-radius:22px;padding:10px;
-    display:flex;gap:8px;box-shadow:var(--shadow);
-    border:1px solid #ffe0ec;max-width:560px;margin:0 auto;
-  }
-  .search input{
-    flex:1;border:none;outline:none;background:transparent;
-    font-family:var(--body);font-size:16px;font-weight:600;color:var(--plum);
-    padding:12px 16px;min-width:0;
-  }
+  .search{background:var(--card);border-radius:22px;padding:10px;display:flex;gap:8px;box-shadow:var(--shadow);border:1px solid #ffe0ec;max-width:560px;margin:0 auto}
+  .search input{flex:1;border:none;outline:none;background:transparent;font-family:var(--body);font-size:16px;font-weight:600;color:var(--plum);padding:12px 16px;min-width:0}
   .search input::placeholder{color:#d9a7bf}
-  .search button{
-    border:none;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:15px;
-    color:#fff;background:linear-gradient(135deg,var(--pink),var(--pink-deep));
-    padding:0 22px;border-radius:15px;transition:transform .15s,box-shadow .15s;
-    display:flex;align-items:center;gap:7px;white-space:nowrap;
-  }
+  .search button{border:none;cursor:pointer;font-family:var(--disp);font-weight:700;font-size:15px;color:#fff;background:linear-gradient(135deg,var(--pink),var(--pink-deep));padding:0 22px;border-radius:15px;transition:transform .15s;display:flex;align-items:center;gap:7px;white-space:nowrap}
   .search button:hover{transform:translateY(-1px)}
-  .search button:active{transform:translateY(0)}
   .search button:disabled{opacity:.6;cursor:default;transform:none}
   .hint{text-align:center;color:var(--plum-mute);font-size:12.5px;margin-top:12px;font-weight:600}
 
-  /* loading */
   .loading{display:none;text-align:center;margin-top:38px}
   .loading.show{display:block}
   .petal-spin{width:52px;height:52px;margin:0 auto 14px;animation:spin 1.1s linear infinite;color:var(--pink)}
   @keyframes spin{to{transform:rotate(360deg)}}
   .loading p{color:var(--plum-mute);font-weight:700;font-family:var(--disp)}
 
-  /* report */
   .report{display:none;margin-top:30px}
   .report.show{display:block;animation:pop .45s cubic-bezier(.2,.8,.2,1) both}
   @keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes spin{to{transform:rotate(360deg)}}
 
-  .note{
-    background:var(--amber-bg);border:1px solid #ffe0b8;color:#9a6a1e;
-    border-radius:14px;padding:10px 14px;font-size:13px;font-weight:700;
-    margin-bottom:18px;text-align:center;
-  }
+  .note{background:var(--amber-bg);border:1px solid #ffe0b8;color:#9a6a1e;border-radius:14px;padding:10px 14px;font-size:13px;font-weight:700;margin-bottom:18px;text-align:center}
 
-  .grade-card{
-    background:var(--card);border-radius:26px;box-shadow:var(--shadow);
-    border:1px solid #ffe0ec;padding:26px;margin-bottom:20px;
-    display:flex;align-items:center;gap:24px;
-  }
+  .grade-card{background:var(--card);border-radius:26px;box-shadow:var(--shadow);border:1px solid #ffe0ec;padding:26px;margin-bottom:20px;display:flex;align-items:center;gap:24px}
   @media(max-width:520px){.grade-card{flex-direction:column;text-align:center}}
   .medallion{position:relative;width:118px;height:118px;flex:none}
   .medallion .bloom{width:100%;height:100%;animation:sway 6s ease-in-out infinite}
   @keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
-  .medallion .letter{
-    position:absolute;inset:0;display:grid;place-items:center;
-    font-family:var(--disp);font-weight:700;font-size:46px;color:#fff;
-  }
-  .grade-info .site{font-size:13px;color:var(--plum-mute);font-weight:700;word-break:break-all;font-family:var(--body)}
+  .medallion .letter{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:46px;color:#fff}
+  .grade-info .site{font-size:13px;color:var(--plum-mute);font-weight:700;word-break:break-all}
   .grade-info .verdict{font-family:var(--disp);font-weight:700;font-size:22px;line-height:1.2;margin:6px 0 10px}
   .scorebar{height:9px;border-radius:6px;background:#ffe4ee;overflow:hidden;max-width:280px}
   .scorebar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--pink),var(--pink-deep));transition:width .8s ease}
   .grade-info .pts{font-size:12.5px;color:var(--plum-mute);font-weight:700;margin-top:7px}
 
   .group{background:var(--card);border-radius:20px;border:1px solid #ffe6ef;box-shadow:0 10px 24px -18px rgba(255,61,135,.4);margin-bottom:14px;overflow:hidden}
-  .group h3{
-    font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.02em;
-    padding:14px 18px 4px;color:var(--plum);display:flex;align-items:center;gap:8px;
-  }
+  .group h3{font-family:var(--disp);font-weight:700;font-size:14px;padding:14px 18px 4px;color:var(--plum);display:flex;align-items:center;gap:8px}
   .item{display:flex;gap:12px;padding:12px 18px;align-items:flex-start}
   .item+.item{border-top:1px solid #fdeaf1}
-  .chip{
-    width:24px;height:24px;border-radius:8px;flex:none;display:grid;place-items:center;
-    margin-top:1px;
-  }
+  .chip{width:24px;height:24px;border-radius:8px;flex:none;display:grid;place-items:center;margin-top:1px}
   .chip svg{width:14px;height:14px;stroke-width:2.4;fill:none}
   .chip.pass{background:var(--mint-bg);color:var(--mint)}
   .chip.fail{background:var(--coral-bg);color:var(--coral)}
   .chip.warn{background:var(--amber-bg);color:var(--amber)}
+  .chip.info{background:var(--lav-bg);color:var(--lav)}
   .item .txt .lab{font-weight:800;font-size:14px}
   .item .txt .det{font-size:13px;color:var(--plum-mute);font-weight:600;margin-top:2px;line-height:1.5}
 
-  .again{
-    display:block;margin:22px auto 0;font-family:var(--disp);font-weight:700;
-    background:#fff;border:1.5px solid var(--pink-soft);color:var(--pink);
-    padding:11px 22px;border-radius:15px;cursor:pointer;transition:background .15s;
-  }
+  .again{display:block;margin:22px auto 0;font-family:var(--disp);font-weight:700;background:#fff;border:1.5px solid var(--pink-soft);color:var(--pink);padding:11px 22px;border-radius:15px;cursor:pointer;transition:background .15s}
   .again:hover{background:var(--blush-2)}
-
   .err{display:none;text-align:center;margin-top:26px;color:var(--coral);font-weight:700}
   .err.show{display:block}
-
-  .foot{
-    margin-top:40px;text-align:center;font-size:12.5px;color:var(--plum-mute);
-    font-weight:700;line-height:1.7;max-width:52ch;margin-inline:auto;
-  }
+  .foot{margin-top:40px;text-align:center;font-size:12.5px;color:var(--plum-mute);font-weight:700;line-height:1.7;max-width:54ch;margin-inline:auto}
   .foot b{color:var(--pink)}
-
   :focus-visible{outline:2px solid var(--pink);outline-offset:2px}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -164,17 +99,17 @@
 
   <div class="hero">
     <h1>Website kamu <span class="accent">seaman</span> apa?</h1>
-    <p>Masukkan alamat website, dan kami cek higiene keamanannya — enkripsi, perlindungan browser, sampai kebocoran info. Lembut, cepat, tanpa nyerang apa pun.</p>
+    <p>Masukkan alamat website, dapat rapor keamanannya dalam sekejap — enkripsi, sertifikat SSL, perlindungan browser, sampai kebocoran info. Buat siapa saja di tim: cukup buka & ketik, tanpa install apa pun.</p>
   </div>
 
   <div class="search">
-    <input id="url" type="text" inputmode="url" placeholder="contoh: tokopedia.com" autocomplete="off" spellcheck="false">
+    <input id="url" type="text" inputmode="url" placeholder="contoh: dev.aplikasikamu.com" autocomplete="off" spellcheck="false">
     <button id="go" type="button">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
       Periksa
     </button>
   </div>
-  <div class="hint">Cuma membaca yang website tampilkan ke publik &middot; tidak menyimpan apa pun</div>
+  <div class="hint">Pasif &amp; ringan &middot; cuma segelintir request per klik &middot; aman dijalankan walau tim lain lagi ngetes</div>
 
   <div id="loading" class="loading">
     <svg class="petal-spin" viewBox="0 0 100 100" id="spinBloom"></svg>
@@ -182,11 +117,10 @@
   </div>
 
   <div id="err" class="err"></div>
-
   <div id="report" class="report" aria-live="polite"></div>
 
   <div class="foot">
-    <b>PetalScan</b> cuma memeriksa hal yang bersifat publik dan tidak intrusif. Untuk uji keamanan mendalam (penetration testing), lakukan hanya pada website milikmu sendiri atau yang punya izin tertulis. 💗
+    <b>PetalScan</b> cuma memeriksa hal yang bersifat publik dan tidak intrusif (nggak nyerang, nggak nyoba payload). Untuk uji keamanan mendalam (penetration testing), lakukan hanya pada aplikasi milik tim sendiri di lingkungan yang berwenang. 💗
   </div>
 </div>
 
@@ -195,17 +129,14 @@
   var $=function(id){return document.getElementById(id);};
   var urlIn=$('url'),go=$('go'),loading=$('loading'),report=$('report'),err=$('err');
 
-  // build a little blossom for the spinner
   (function(){
-    var s=document.getElementById('spinBloom'),h='';
+    var s=$('spinBloom'),h='';
     for(var i=0;i<8;i++){h+='<ellipse cx="50" cy="27" rx="12" ry="21" fill="currentColor" opacity="'+(0.35+0.08*i)+'" transform="rotate('+(i*45)+' 50 50)"/>';}
-    h+='<circle cx="50" cy="50" r="12" fill="#fff"/>';
-    s.innerHTML=h;
+    h+='<circle cx="50" cy="50" r="12" fill="#fff"/>';s.innerHTML=h;
   })();
 
   function bloomSVG(){
-    var h='';
-    for(var i=0;i<8;i++){h+='<ellipse cx="50" cy="26" rx="13" ry="23" fill="currentColor" transform="rotate('+(i*45)+' 50 50)"/>';}
+    var h='';for(var i=0;i<8;i++){h+='<ellipse cx="50" cy="26" rx="13" ry="23" fill="currentColor" transform="rotate('+(i*45)+' 50 50)"/>';}
     h+='<circle cx="50" cy="50" r="21" fill="rgba(255,255,255,.22)"/>';
     return '<svg class="bloom" viewBox="0 0 100 100">'+h+'</svg>';
   }
@@ -213,107 +144,79 @@
   var ICON={
     pass:'<svg viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     fail:'<svg viewBox="0 0 24 24" stroke="currentColor"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>',
-    warn:'<svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 8v5M12 16.5v.5" stroke-linecap="round"/></svg>'
+    warn:'<svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 8v5M12 16.5v.5" stroke-linecap="round"/></svg>',
+    info:'<svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.4" stroke-linecap="round"/></svg>'
   };
   var GRADEC={A:'var(--mint)',B:'#6cc98f',C:'var(--amber)',D:'var(--coral)',F:'var(--coral)'};
-  var VERDICT={
-    A:'Cantik banget keamanannya! ✨',
-    B:'Udah oke, tinggal dipoles dikit 💅',
-    C:'Lumayan, tapi ada yang bolong',
-    D:'Hmm, banyak yang perlu dibenerin',
-    F:'Waduh, masih rawan nih 🥺'
-  };
+  var VERDICT={A:'Cantik banget keamanannya! ✨',B:'Udah oke, tinggal dipoles dikit 💅',C:'Lumayan, tapi ada yang bolong',D:'Hmm, banyak yang perlu dibenerin',F:'Waduh, masih rawan nih 🥺'};
 
   function esc(s){return (''+s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 
   function draw(r){
     err.className='err';
-    var pct=Math.round(r.score/r.maxScore*100);
-    var gc=GRADEC[r.grade]||'var(--pink)';
-    var html='';
+    var pct=Math.round(r.score/r.maxScore*100),gc=GRADEC[r.grade]||'var(--pink)',html='';
     if(r.example){html+='<div class="note">◊ Ini contoh tampilan (backend belum aktif). Deploy ke Vercel biar cek website beneran.</div>';}
-
-    html+='<div class="grade-card">'+
-      '<div class="medallion" style="color:'+gc+'">'+bloomSVG()+'<span class="letter">'+r.grade+'</span></div>'+
-      '<div class="grade-info">'+
-        '<div class="site">'+esc(r.finalUrl||r.url)+'</div>'+
-        '<div class="verdict">'+(VERDICT[r.grade]||'')+'</div>'+
-        '<div class="scorebar"><i style="width:'+pct+'%"></i></div>'+
-        '<div class="pts">'+r.score+' / '+r.maxScore+' poin keamanan ('+pct+'%)</div>'+
-      '</div></div>';
-
+    html+='<div class="grade-card"><div class="medallion" style="color:'+gc+'">'+bloomSVG()+'<span class="letter">'+r.grade+'</span></div>'+
+      '<div class="grade-info"><div class="site">'+esc(r.finalUrl||r.url)+'</div>'+
+      '<div class="verdict">'+(VERDICT[r.grade]||'')+'</div>'+
+      '<div class="scorebar"><i style="width:'+pct+'%"></i></div>'+
+      '<div class="pts">'+r.score+' / '+r.maxScore+' poin keamanan ('+pct+'%)</div></div></div>';
     r.groups.forEach(function(g){
       html+='<div class="group"><h3>'+esc(g.title)+'</h3>';
       g.items.forEach(function(it){
         html+='<div class="item"><span class="chip '+it.status+'">'+ICON[it.status]+'</span>'+
-          '<span class="txt"><span class="lab">'+esc(it.label)+'</span>'+
-          '<span class="det">'+esc(it.detail)+'</span></span></div>';
+          '<span class="txt"><span class="lab">'+esc(it.label)+'</span><span class="det">'+esc(it.detail)+'</span></span></div>';
       });
       html+='</div>';
     });
     html+='<button class="again" type="button" id="again">← Cek website lain</button>';
-    report.innerHTML=html;
-    report.className='report show';
-    document.getElementById('again').addEventListener('click',reset);
+    report.innerHTML=html;report.className='report show';
+    $('again').addEventListener('click',reset);
     report.scrollIntoView({behavior:'smooth',block:'start'});
   }
 
-  function reset(){
-    report.className='report';err.className='err';urlIn.value='';urlIn.focus();
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
+  function reset(){report.className='report';err.className='err';urlIn.value='';urlIn.focus();window.scrollTo({top:0,behavior:'smooth'});}
 
   function scan(){
-    var u=urlIn.value.trim();
-    if(!u){urlIn.focus();return;}
-    report.className='report';err.className='err';
-    loading.className='loading show';go.disabled=true;
-
+    var u=urlIn.value.trim();if(!u){urlIn.focus();return;}
+    report.className='report';err.className='err';loading.className='loading show';go.disabled=true;
     fetch('/api/scan?url='+encodeURIComponent(u))
-      .then(function(res){
-        var ct=res.headers.get('content-type')||'';
-        if(ct.indexOf('application/json')===-1)throw new Error('no-backend');
-        return res.json();
-      })
-      .then(function(data){
-        loading.className='loading';go.disabled=false;
-        if(data.error){err.textContent='😢 '+data.error;err.className='err show';return;}
-        draw(data);
-      })
-      .catch(function(){
-        // backend not available (e.g. preview) → show a clearly-labeled example
-        loading.className='loading';go.disabled=false;
-        draw(EXAMPLE(u));
-      });
+      .then(function(res){var ct=res.headers.get('content-type')||'';if(ct.indexOf('application/json')===-1)throw new Error('no-backend');return res.json();})
+      .then(function(data){loading.className='loading';go.disabled=false;if(data.error){err.textContent='😢 '+data.error;err.className='err show';return;}draw(data);})
+      .catch(function(){loading.className='loading';go.disabled=false;draw(EXAMPLE(u));});
   }
-
   go.addEventListener('click',scan);
   urlIn.addEventListener('keydown',function(e){if(e.key==='Enter')scan();});
 
   function EXAMPLE(u){
-    var host=u.replace(/^https?:\/\//,'').replace(/\/.*$/,'')||'contohtoko.com';
-    return {
-      example:true,url:u,finalUrl:'https://'+host+'/',grade:'B',score:11,maxScore:15,
-      groups:[
-        {title:'🔒 Koneksi aman',items:[
-          {status:'pass',label:'HTTPS aktif',detail:'Website dienkripsi, data pengunjung tidak gampang diintip.'},
-          {status:'pass',label:'HTTP dialihkan ke HTTPS',detail:'Buka pakai http:// otomatis dipaksa ke versi aman.'},
-          {status:'fail',label:'HSTS belum ada',detail:'Tambahkan Strict-Transport-Security supaya browser selalu pilih koneksi aman.'}
-        ]},
-        {title:'🛡️ Perlindungan browser',items:[
-          {status:'fail',label:'Content-Security-Policy belum ada',detail:'Tanpa CSP, website lebih rawan serangan XSS (penyusupan script).'},
-          {status:'pass',label:'Anti-sniff aktif',detail:'X-Content-Type-Options: nosniff sudah dipasang.'},
-          {status:'pass',label:'Aman dari clickjacking',detail:'Website tidak bisa di-embed diam-diam di iframe orang lain.'},
-          {status:'warn',label:'Referrer-Policy longgar',detail:'Sebaiknya batasi info alamat asal yang dibocorkan ke situs lain.'}
-        ]},
-        {title:'🍪 Cookie',items:[
-          {status:'pass',label:'Cookie terlindungi',detail:'Pakai flag Secure, HttpOnly, dan SameSite.'}
-        ]},
-        {title:'🔎 Kebocoran info',items:[
-          {status:'warn',label:'Versi server terlihat',detail:'Header membocorkan "nginx/1.18.0" — sembunyikan biar tidak jadi petunjuk penyerang.'}
-        ]}
-      ]
-    };
+    var host=u.replace(/^https?:\/\//,'').replace(/\/.*$/,'')||'dev.contohtoko.com';
+    return {example:true,url:u,finalUrl:'https://'+host+'/',grade:'B',score:12,maxScore:16,groups:[
+      {title:'🔒 Koneksi aman',items:[
+        {status:'pass',label:'HTTPS aktif',detail:'Website dienkripsi, data pengunjung tidak gampang diintip.'},
+        {status:'pass',label:'HTTP dialihkan ke HTTPS',detail:'Buka pakai http:// otomatis dipaksa ke versi aman.'},
+        {status:'fail',label:'HSTS belum ada',detail:'Tambahkan Strict-Transport-Security supaya browser selalu pilih koneksi aman.'}
+      ]},
+      {title:'📜 Sertifikat SSL',items:[
+        {status:'pass',label:'Sertifikat SSL sehat',detail:'Valid dan masih lama — sisa 62 hari (berlaku s/d Sep 20 2026).'},
+        {status:'info',label:'Penerbit',detail:'Let\u2019s Encrypt · untuk '+host}
+      ]},
+      {title:'🛡️ Perlindungan browser',items:[
+        {status:'fail',label:'Content-Security-Policy belum ada',detail:'Tanpa CSP, website lebih rawan serangan XSS (penyusupan script).'},
+        {status:'pass',label:'Anti-sniff tipe file',detail:'X-Content-Type-Options: nosniff sudah dipasang.'},
+        {status:'pass',label:'Perlindungan clickjacking',detail:'Website tidak bisa di-embed diam-diam di iframe orang lain.'},
+        {status:'warn',label:'Referrer-Policy longgar',detail:'Sebaiknya batasi info alamat asal yang dibocorkan ke situs lain.'}
+      ]},
+      {title:'🍪 Cookie',items:[
+        {status:'pass',label:'Cookie terlindungi',detail:'Pakai flag Secure, HttpOnly, dan SameSite.'}
+      ]},
+      {title:'🌐 Info publik',items:[
+        {status:'info',label:'Alamat IP',detail:'76.76.21.21'},
+        {status:'info',label:'CNAME',detail:'cname.vercel-dns.com (indikasi CDN/hosting)'}
+      ]},
+      {title:'🔎 Kebocoran info',items:[
+        {status:'warn',label:'Versi server terlihat',detail:'Header membocorkan "nginx/1.18.0" — sembunyikan biar tidak jadi petunjuk penyerang.'}
+      ]}
+    ]};
   }
 })();
 </script>
